@@ -12,21 +12,21 @@ $people = $html->find('div.moduleTableArea table tbody tr td');
 $date = date('Ymd');
 file_put_contents($filename, $date."\t" , FILE_APPEND);
 
-foreach ($people as $key => $varlue){
+foreach ($people as $key => $value){
     if ($key >= 8){
         break;
     }else if($key%2 == 0){
-        echo($varlue);
-        file_put_contents($filename, $varlue->plaintext."\t" , FILE_APPEND);
+        echo($value);
+        file_put_contents($filename, $value->plaintext."\t" , FILE_APPEND);
     }
 }
 
-foreach ($people as $key => $varlue){
+foreach ($people as $key => $value){
     if ($key >= 8){
         break;
     }else if($key%2 != 0){
-        echo($varlue);
-        file_put_contents($filename, $varlue->plaintext."\t" , FILE_APPEND);
+        echo($value);
+        file_put_contents($filename, $value->plaintext."\t" , FILE_APPEND);
     }	
 }
 
